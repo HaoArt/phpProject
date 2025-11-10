@@ -1,0 +1,105 @@
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.h-font {
+    font-family: "Merienda", cursive;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alert-custom {
+    position: fixed;
+    top: 25px;
+    right: 0px;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    height: 100vh;
+    background: #343a40;
+    color: white;
+    position: fixed;
+    width: 250px;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    color: #adb5bd;
+    text-decoration: none;
+    display: block;
+    padding: 12px 20px;
+    border-radius: 6px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: #495057;
+    color: #fff;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.navbar {
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#dashboard-custom {
+    position: fixed;
+    height: 100%;
+    top: 10%;
+    z-index: 2;
+}
+
+#header-custom {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+#mt-custom {
+    margin-top: 70px;
+}
+
+@media screen and (max-width : 992px) {
+    #dashboard-custom {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+
+    #header-custom {
+        position: relative;
+        top: 0;
+    }
+
+    #mt-custom {
+        margin-top: 50px;
+    }
+}
