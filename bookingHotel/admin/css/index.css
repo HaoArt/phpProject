@@ -103,3 +103,10 @@ body {
         margin-top: 50px;
     }
 }
+
+.c-active {
+    background-color: #0d6efd;
+    /* màu Bootstrap primary */
+    color: #fff !important;
+    border-radius: 5px;
+}

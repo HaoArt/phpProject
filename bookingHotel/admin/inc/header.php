@@ -1,3 +1,4 @@
+    <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
     <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between "
         id="header-custom">
         <h3 class="me-5 fs-3 fw-bold h-font">Huế Hotel</h3>
@@ -14,21 +15,26 @@
                 </button>
                 <div class="collapse navbar-collapse  flex-column align-items-stretch " id="filterDropdown">
                     <ul class="list-unstyled m-0">
-                        <li><a href="dashboard.php" class="d-block py-2 px-3 text-light text-decoration-none active"><i
+                        <li><a href="dashboard.php"
+                                class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'dashboard.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-speedometer2"></i> Dashboard</a></li>
                         <li><a href="manage_booking_rooms.php"
-                                class="d-block py-2 px-3 text-light text-decoration-none"><i
+                                class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'manage_booking_rooms.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-door-closed"></i>Lịch sử đặt Phòng</a></li>
-                        <li><a href="manage_rooms.php" class="d-block py-2 px-3 text-light text-decoration-none"><i
+                        <li><a href="manage_rooms.php"
+                                class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'manage_rooms.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-door-closed"></i>Phòng</a></li>
                         <li><a href="manage_feature_facilities.php"
-                                class="d-block py-2 px-3 text-light text-decoration-none"><i
+                                class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'manage_feature_facilities.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-cup-hot-fill"></i></i> Đặc trưng, tiện nghi</a></li>
-                        <li><a href="manage_queries.php" class="d-block py-2 px-3 text-light text-decoration-none"><i
+                        <li><a href="manage_queries.php"
+                                class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'manage_queries.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-journal-text"></i> Liên hệ khách hàng</a></li>
-                        <li><a href="manage_banner.php" class="d-block py-2 px-3 text-light text-decoration-none"><i
+                        <li><a href="manage_banner.php"
+                                class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'manage_banner.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-file-image"></i> Ảnh bìa</a></li>
-                        <li><a href="manage_setting.php" class="d-block py-2 px-3 text-light text-decoration-none"><i
+                        <li><a href="manage_setting.php"
+                                class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'manage_setting.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-gear"></i> Cài đặt</a></li>
                         <li><a href="logout.php" class="d-block py-2 px-3 text-danger text-decoration-none"><i
                                     class="bi bi-box-arrow-right"></i> Đăng xuất</a></li>
