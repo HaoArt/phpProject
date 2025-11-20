@@ -33,61 +33,28 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-5 px-4">
-                <div class=" bg-white rounded shadow border-top border-4 border-dark p-lg-3 pop">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="images/features/6.svg" alt="" width="40px">
-                        <h5 class="ms-3">Lò sửi</h5>
+            <?php
+            $q = "SELECT * FROM facilities ORDER BY cr_no DESC";
+            $r = mysqli_query($con, $q);
+            if (mysqli_num_rows($r) > 0) {
+                while ($row = mysqli_fetch_assoc($r)) {
+                    $name = htmlspecialchars($row['name']);
+                    $icon = htmlspecialchars($row['icon']);
+                    $des = htmlspecialchars($row['description']);
+                    // print_r($row['name']);
+            ?>
+                    <div class="col-lg-4 col-md-6 mb-5 px-4">
+                        <div class=" bg-white rounded shadow border-top border-4 border-dark p-lg-3 pop">
+                            <div class="d-flex align-items-center justify-content-start">
+                                <img src="./admin/<?php echo $icon ?>" alt="" width="40px">
+                                <h5 class="ms-3"><?php echo $name ?></h5>
+                            </div>
+                            <p><?php echo $des ?></p>
+                        </div>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, deleniti autem laborum .</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5 px-4">
-                <div class=" bg-white rounded shadow border-top border-4 border-dark p-lg-3 pop">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="images/features/6.svg" alt="" width="40px">
-                        <h5 class="ms-3">Lò sửi</h5>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, deleniti autem laborum .</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5 px-4">
-                <div class=" bg-white rounded shadow border-top border-4 border-dark p-lg-3 pop">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="images/features/6.svg" alt="" width="40px">
-                        <h5 class="ms-3">Lò sửi</h5>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, deleniti autem laborum .</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5 px-4">
-                <div class=" bg-white rounded shadow border-top border-4 border-dark p-lg-3 pop">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="images/features/6.svg" alt="" width="40px">
-                        <h5 class="ms-3">Lò sửi</h5>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, deleniti autem laborum .</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5 px-4">
-                <div class=" bg-white rounded shadow border-top border-4 border-dark p-lg-3 pop">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="images/features/6.svg" alt="" width="40px">
-                        <h5 class="ms-3">Lò sửi</h5>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, deleniti autem laborum .</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-5 px-4">
-                <div class=" bg-white rounded shadow border-top border-4 border-dark p-lg-3 pop">
-                    <div class="d-flex align-items-center justify-content-start">
-                        <img src="images/features/6.svg" alt="" width="40px">
-                        <h5 class="ms-3">Lò sửi</h5>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, deleniti autem laborum .</p>
-                </div>
-            </div>
-
+            <?php }
+            }
+            ?>
         </div>
     </div>
 

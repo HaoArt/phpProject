@@ -1,8 +1,14 @@
    <?php
-    require(__DIR__ . '/../admin/inc/db_config.php');
+    // require(__DIR__ . '/../admin/inc/db_config.php');
+    require_once(__DIR__ . '/../admin/inc/db_config.php');
     $settings_q = "SELECT * FROM settings WHERE 1";
     $settings_r = mysqli_fetch_assoc(mysqli_query($con, $settings_q));
     $current_page = basename($_SERVER['PHP_SELF']);
+
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
     ?>
 
    <!-- Header Navbar-->
@@ -39,17 +45,51 @@
                    </li>
 
                </ul>
-               <div class="d-flex">
-                   <!-- Button trigger modal -->
-                   <button type="button" class="btn btn-outline-dark me-lg-2 me-3 shadow-none" data-bs-toggle="modal"
-                       data-bs-target="#loginModal">
-                       Đăng nhập
-                   </button>
-                   <button type="button" class="btn btn-outline-dark me-lg-2 me-3 shadow-none" data-bs-toggle="modal"
-                       data-bs-target="#registerModal">
-                       Đăng ký
-                   </button>
-               </div>
+               <?php if (isset($_SESSION['userLogin']) && $_SESSION['userLogin'] === true):
+                ?>
+
+                   <div class="dropdown d-flex align-items-center">
+
+                       <!-- Avatar -->
+
+
+                       <!-- Dropdown -->
+                       <button class="btn p-0 bg-transparent shadow-none" type="button" id="userMenuButton"
+                           data-bs-toggle="dropdown" aria-expanded="false" style="border: none;">
+                           <img src="<?= $_SESSION['user']['profile'] ?? 'assets/img/default_user.png'; ?>"
+                               class="rounded-circle" width="40" height="40" style="object-fit: cover;">
+                       </button>
+
+                       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenuButton">
+                           <li><span class="dropdown-item"><?= $_SESSION['user']['name']; ?></span></li>
+                           <li><a class="dropdown-item" href="profile.php">Hồ sơ</a></li>
+                           <li><a class="dropdown-item" href="booking_history.php">Lịch sử đặt phòng</a></li>
+                           <li>
+                               <hr class="dropdown-divider">
+                           </li>
+                           <li><button class="dropdown-item text-danger" onclick="logout()">Đăng xuất</button></li>
+                       </ul>
+
+                   </div>
+
+               <?php else: ?>
+
+                   <div class="d-flex">
+                       <button type="button" class="btn btn-outline-dark me-3 shadow-none" data-bs-toggle="modal"
+                           data-bs-target="#loginModal">
+                           Đăng nhập
+                       </button>
+
+                       <button type="button" class="btn btn-outline-dark me-3 shadow-none" data-bs-toggle="modal"
+                           data-bs-target="#registerModal">
+                           Đăng ký
+                       </button>
+
+
+                   </div>
+
+               <?php endif; ?>
+
            </div>
        </div>
    </nav>
@@ -58,8 +98,8 @@
        aria-labelledby="staticBackdropLabel" aria-hidden="true">
        <div class="modal-dialog">
            <div class="modal-content">
-               <form action="post">
-                   <div class="modal-header">
+               <form id="loginForm" action="post">
+                   <div class=" modal-header">
                        <h1 class="modal-title fs-5" id="staticBackdropLabel">
                            <i class="bi bi-person-circle"></i>
                            Đăng nhập
@@ -69,15 +109,15 @@
                    <div class="modal-body">
                        <div class="mb-3">
                            <label class="form-label">Email </label>
-                           <input type="email" class="form-control shadow-none">
+                           <input type="email" name="email_l" id="email_l" class="form-control shadow-none">
 
                        </div>
                        <div class="mb-3">
                            <label class="form-label">Mật khẩu</label>
-                           <input type="password" class="form-control">
+                           <input type="password" name="password_l" id="password_l" class="form-control">
                        </div>
                        <div class="d-flex align-items-center justify-content-between">
-                           <button type="submit" class="btn btn-dark">Đăng Nhập</button>
+                           <button type="button" onclick="login()" class="btn btn-dark">Đăng Nhập</button>
                            <a href="javascript: void(0)">Quên mật khẩu?</a>
                        </div>
                    </div>
@@ -90,69 +130,59 @@
        aria-labelledby="staticBackdropLabel" aria-hidden="true">
        <div class="modal-dialog modal-lg">
            <div class="modal-content">
-               <form action="post">
+               <form id="registerForm" method="POST" enctype="multipart/form-data">
                    <div class="modal-header">
-                       <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                           <i class="bi bi-person-circle"></i>
-                           Đăng ký
-                       </h1>
-                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                       <h1 class="modal-title fs-5"><i class="bi bi-person-circle"></i> Đăng ký</h1>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                    </div>
                    <div class="modal-body">
-                       <span class="badge m-auto rounded-pill text-center bg-light text-dark mb-3 text-wrap lh-base">Tất
-                           cả
-                           thông tin (Bao
-                           gồm mail, điện thoại, căn cước công dân) sẽ
-                           được chúng tôi dùng để đặt
-                           phòng!
+                       <span class="badge m-auto rounded-pill text-center bg-light text-dark mb-3 text-wrap lh-base">
+                           Tất cả thông tin của bạn sẽ được dữ bảo mật, và không thể thay đổi nó!
                        </span>
                        <div class="container-fluid">
                            <div class="row">
-                               <div class="col-md-6 ps-0 mb-3">
-                                   <label class="form-label">Tên </label>
-                                   <input type="text" name="name" id="name" class="form-control shadow-none">
+                               <div class="col-md-6 mb-3">
+                                   <label class="form-label">Tên</label>
+                                   <input type="text" name="name" class="form-control shadow-none" required>
                                </div>
-                               <div class="col-md-6 ps-0 mb-3">
-                                   <label class="form-label">Email </label>
-                                   <input type="text" name="mail" id="mail" class="form-control shadow-none">
+                               <div class="col-md-6 mb-3">
+                                   <label class="form-label">Email</label>
+                                   <input type="email" name="email" class="form-control shadow-none" required>
                                </div>
-                               <div class="col-md-6 ps-0 mb-3">
-                                   <label class="form-label">Điện thoại </label>
-                                   <input type="number" name="phone" id="phone" class="form-control shadow-none">
+                               <div class="col-md-6 mb-3">
+                                   <label class="form-label">Điện thoại</label>
+                                   <input type="tel" name="phone" class="form-control shadow-none" required>
                                </div>
-                               <div class="col-md-6 ps-0 mb-3">
-                                   <label class="form-label">Căn cước công dân </label>
-                                   <input type="file" name="identity" id="identity" class="form-control shadow-none">
-                               </div>
-                               <div class="col-md-12 ps-0 mb-3">
-                                   <label class="form-label">Địa chỉ </label>
-                                   <textarea class="form-control" aria-label="With textarea" name="address"
-                                       id="adresss"></textarea>
-                               </div>
-                               <div class="col-md-6 ps-0 mb-3">
-                                   <label class="form-label">Mã Capcha</label>
-                                   <input type="number" name="pincode" id="pincode" class="form-control shadow-none">
-                               </div>
-                               <div class="col-md-6 ps-0 mb-3">
+                               <div class="col-md-6 mb-3">
                                    <label class="form-label">Ngày sinh</label>
-                                   <input type="date" name="birthday" id="birthday" class="form-control shadow-none">
+                                   <input type="date" name="birthday" class="form-control shadow-none" required>
                                </div>
-                               <div class="col-md-6 ps-0 mb-3">
-                                   <label class="form-label">Mật khẩu </label>
-                                   <input type="text" name="password" id="password" class="form-control shadow-none">
+                               <div class="col-md-12 mb-3">
+                                   <label class="form-label">Ảnh cá nhân</label>
+                                   <input type="file" name="profile" class="form-control shadow-none" required>
                                </div>
-                               <div class="col-md-6 ps-0 mb-3">
-                                   <label class="form-label">Nhập lại mật khẩu </label>
-                                   <input type="text" name="repassword" id="repassword"
-                                       class="form-control shadow-none">
+                               <div class="col-md-12 mb-3">
+                                   <label class="form-label">Địa chỉ</label>
+                                   <textarea class="form-control" name="address" required></textarea>
+                               </div>
+
+                               <div class="col-md-6 mb-3">
+                                   <label class="form-label">Mật khẩu</label>
+                                   <input type="password" name="password" class="form-control shadow-none" required>
+                               </div>
+                               <div class="col-md-6 mb-3">
+                                   <label class="form-label">Nhập lại mật khẩu</label>
+                                   <input type="password" name="repassword" class="form-control shadow-none" required>
                                </div>
                                <div class="text-center">
-                                   <button type="submit" class="btn btn-dark">Đăng ký</button>
+                                   <button type="button" onclick="register()" class="btn btn-dark">Đăng ký</button>
                                </div>
                            </div>
                        </div>
                    </div>
                </form>
+
            </div>
        </div>
    </div>
+   <script src="./script/login_register_logout.js"></script>

@@ -38,10 +38,10 @@
                             $img = "default.jpg";
                         }
                 ?>
-                        <div class="swiper-slide">
-                            <img src="./admin/<?php echo "$img"; ?>" alt="" class="w-100 d-block"
-                                style="height:460px; object-fit:cover;">
-                        </div>
+                <div class="swiper-slide">
+                    <img src="./admin/<?php echo "$img"; ?>" alt="" class="w-100 d-block"
+                        style="height:460px; object-fit:cover;">
+                </div>
                 <?php
                     }
                 } else {
@@ -60,43 +60,42 @@
         <div class="row">
             <div class="col-lg-12 bg-white shadow p-4 rounded g-1">
                 <h5>Đặt phòng bất cứ đâu</h5>
-                <form action="">
-                    <div class="row">
+                <form>
+                    <div class="row g-3">
                         <div class="col-lg-3 mb-3">
-                            <label class="form-label">Ngày nhận phòng</label>
-                            <input type="date" class="form-control" id="checkin">
+                            <label class="form-label fw-bold">Ngày nhận phòng</label>
+                            <input type="date" class="form-control" id="checkin" name="checkin"
+                                min="<?= date('Y-m-d') ?>">
                         </div>
                         <div class="col-lg-3 mb-3">
-                            <label class="form-label">Ngày trả phòng</label>
-                            <input type="date" class="form-control" id="checkout">
+                            <label class="form-label fw-bold">Ngày trả phòng</label>
+                            <input type="date" class="form-control" id="checkout" name="checkout"
+                                min="<?= date('Y-m-d') ?>">
                         </div>
                         <div class="col-lg-2 mb-3">
-                            <label class="form-label">Số người lớn</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Chọn số người</option>
-                                <?php
-                                for ($i = 1; $i <= 10; $i++) {
-                                    echo "<option value=" . "$i>$i</option>";
-                                }
-                                ?>
+                            <label class="form-label fw-bold">Người lớn</label>
+                            <select class="form-select" name="adults">
+                                <option value="" selected disabled>Chọn số người</option>
+                                <?php for ($i = 1; $i <= 10; $i++): ?>
+                                <option value="<?= $i ?>"><?= $i ?></option>
+                                <?php endfor; ?>
                             </select>
                         </div>
-                        <div class="col-lg-2 mb3">
-                            <label class="form-label">Số trẻ em</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Chọn số người</option>
-                                <?php
-                                for ($i = 1; $i <= 10; $i++) {
-                                    echo "<option value=" . "$i>$i</option>";
-                                }
-                                ?>
+                        <div class="col-lg-2 mb-3">
+                            <label class="form-label fw-bold">Trẻ em</label>
+                            <select class="form-select" name="children">
+                                <option value="" selected disabled>Chọn số người</option>
+                                <?php for ($i = 0; $i <= 10; $i++): ?>
+                                <option value="<?= $i ?>"><?= $i ?></option>
+                                <?php endfor; ?>
                             </select>
                         </div>
-                        <div class=" col-lg-2 mb-lg-3">
-                            <button type="submit" class="btn button_bg_custom w-100 py-3 my-3">Đăng ký</button>
+                        <div class="col-lg-2 d-grid mb-lg-3">
+                            <a href="rooms.php" class="btn button_bg_custom w-100 py-3">Đăng ký</a>
                         </div>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
@@ -212,7 +211,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 text-center mt-5">
-                    <a href="" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none"> Xem thêm >></a>
+                    <a href="rooms.php" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none"> Xem thêm
+                        >></a>
                 </div>
             </div>
         </div>
@@ -381,55 +381,55 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            effect: "fade",
-            // navigation: {
-            //     nextEl: ".swiper-button-next",
-            //     prevEl: ".swiper-button-prev",
-            // },
-            // pagination: {
-            //     el: ".swiper-pagination",
-            //     clickable: true,
-            // },
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        effect: "fade",
+        // navigation: {
+        //     nextEl: ".swiper-button-next",
+        //     prevEl: ".swiper-button-prev",
+        // },
+        // pagination: {
+        //     el: ".swiper-pagination",
+        //     clickable: true,
+        // },
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
 
-            }
-        });
-        var swiper = new Swiper(".mySwiperCoverFlow", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            slidesPerView: "3",
-            loop: true,
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 3,
-                slideShadows: true,
+        }
+    });
+    var swiper = new Swiper(".mySwiperCoverFlow", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        slidesPerView: "3",
+        loop: true,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 3,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1
             },
-            pagination: {
-                el: ".swiper-pagination",
+            640: {
+                slidesPerView: 1
             },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1
-                },
-                640: {
-                    slidesPerView: 1
-                },
-                768: {
-                    slidesPerView: 2
-                },
-                1024: {
-                    slidesPerView: 3
-                },
-            }
-        });
+            768: {
+                slidesPerView: 2
+            },
+            1024: {
+                slidesPerView: 3
+            },
+        }
+    });
     </script>
 </body>
 

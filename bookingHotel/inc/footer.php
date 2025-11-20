@@ -59,3 +59,21 @@
        </div>
 
    </div>
+
+   <script>
+       function showToast(type, message) {
+           const toast = document.createElement("div");
+           toast.className = `toast align-items-center text-white bg-${type} border-0  show position-fixed end-0 m-3`;
+           toast.style.top = "20%"; // ⬅ giảm xuống 30%
+           toast.style.zIndex = "9999";
+           toast.innerHTML = `
+      <div class="d-flex">
+          <div class="toast-body">${message}</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    `;
+
+           document.body.appendChild(toast);
+           setTimeout(() => toast.remove(), 3000);
+       }
+   </script>

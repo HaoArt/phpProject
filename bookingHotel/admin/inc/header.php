@@ -16,9 +16,14 @@
                     <ul class="list-unstyled m-0">
                         <li><a href="dashboard.php" class="d-block py-2 px-3 text-light text-decoration-none active"><i
                                     class="bi bi-speedometer2"></i> Dashboard</a></li>
+                        <li><a href="manage_booking_rooms.php"
+                                class="d-block py-2 px-3 text-light text-decoration-none"><i
+                                    class="bi bi-door-closed"></i>Lịch sử đặt Phòng</a></li>
+                        <li><a href="manage_rooms.php" class="d-block py-2 px-3 text-light text-decoration-none"><i
+                                    class="bi bi-door-closed"></i>Phòng</a></li>
                         <li><a href="manage_feature_facilities.php"
                                 class="d-block py-2 px-3 text-light text-decoration-none"><i
-                                    class="bi bi-door-closed"></i> Đặc trưng, tiện nghi</a></li>
+                                    class="bi bi-cup-hot-fill"></i></i> Đặc trưng, tiện nghi</a></li>
                         <li><a href="manage_queries.php" class="d-block py-2 px-3 text-light text-decoration-none"><i
                                     class="bi bi-journal-text"></i> Liên hệ khách hàng</a></li>
                         <li><a href="manage_banner.php" class="d-block py-2 px-3 text-light text-decoration-none"><i

@@ -89,146 +89,59 @@
                 </nav>
             </div>
             <div class="col-lg-9 col-md-12 px-4">
-                <div class="card mb-3 shadow">
-                    <div class="row g-0 p-3 align-items-center">
-                        <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                            <img src="images/rooms/1.jpg" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                            <h5>Phòng cổ điển</h5>
-                            <div class="features mb-4">
-                                <h6 class="mb-6">Đặc trưng</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">2Phòng</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Phòng tắm</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Ban công</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">3 Ghế sofa</span>
-                            </div>
-                            <div class="facilities mb-3">
-                                <h6 class="mb-6">Cơ sở vật chất</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Wifi</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">TV</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Máy lạnh</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Bếp từ</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">200K/đêm</h5>
-                                <a href="" class="btn btn-success w-100 mb-2">Đặt ngay</a>
-                                <a href="" class="btn btn-info w-100">Xem chi tết</a>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="card mb-3 shadow">
-                    <div class="row g-0 p-3 align-items-center">
-                        <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                            <img src="images/rooms/1.jpg" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                            <h5>Phòng cổ điển</h5>
-                            <div class="features mb-4">
-                                <h6 class="mb-6">Đặc trưng</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">2Phòng</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Phòng tắm</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Ban công</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">3 Ghế sofa</span>
-                            </div>
-                            <div class="facilities mb-3">
-                                <h6 class="mb-6">Cơ sở vật chất</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Wifi</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">TV</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Máy lạnh</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Bếp từ</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">200K/đêm</h5>
-                                <a href="" class="btn btn-success w-100 mb-2">Đặt ngay</a>
-                                <a href="" class="btn btn-info w-100">Xem chi tết</a>
-                            </div>
-                        </div>
-                    </div>
+                <div id="room-list"></div>
 
+                <div class="text-center mt-4">
+                    <button id="loadMore" class="btn btn-primary">Xem thêm</button>
                 </div>
-                <div class="card mb-3 shadow">
-                    <div class="row g-0 p-3 align-items-center">
-                        <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                            <img src="images/rooms/1.jpg" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                            <h5>Phòng cổ điển</h5>
-                            <div class="features mb-4">
-                                <h6 class="mb-6">Đặc trưng</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">2Phòng</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Phòng tắm</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Ban công</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">3 Ghế sofa</span>
-                            </div>
-                            <div class="facilities mb-3">
-                                <h6 class="mb-6">Cơ sở vật chất</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Wifi</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">TV</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Máy lạnh</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Bếp từ</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">200K/đêm</h5>
-                                <a href="" class="btn btn-success w-100 mb-2">Đặt ngay</a>
-                                <a href="" class="btn btn-info w-100">Xem chi tết</a>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-                <div class="card mb-3 shadow">
-                    <div class="row g-0 p-3 align-items-center">
-                        <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
-                            <img src="images/rooms/1.jpg" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-5 px-lg-3 px-md-3 px-0">
-                            <h5>Phòng cổ điển</h5>
-                            <div class="features mb-4">
-                                <h6 class="mb-6">Đặc trưng</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">2Phòng</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Phòng tắm</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">1 Ban công</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">3 Ghế sofa</span>
-                            </div>
-                            <div class="facilities mb-3">
-                                <h6 class="mb-6">Cơ sở vật chất</h6>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Wifi</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">TV</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Máy lạnh</span>
-                                <span class="badge rounded-pill bg-light text-dark text-wrap p-1">Bếp từ</span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 text-center">
-                            <div class="card-body">
-                                <h5 class="card-title">200K/đêm</h5>
-                                <a href="" class="btn btn-success w-100 mb-2">Đặt ngay</a>
-                                <a href="" class="btn btn-info w-100">Xem chi tết</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
+
         </div>
     </div>
     <?php require("inc/footer.php")
     ?>
-    <!-- Boostrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    <?php require("inc/scripts.php"); ?>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let offset = 0;
+            const limit = 4;
+            const btn = document.getElementById("loadMore");
+            const container = document.getElementById("room-list");
+
+            // Hàm load phòng
+            const loadRooms = () => {
+                fetch("ajax/load_rooms.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: "offset=" + offset
+                    })
+                    .then(res => res.text())
+                    .then(data => {
+                        if (!data) return;
+
+                        if (data.includes("__NO_MORE__")) {
+                            btn.style.display = "none";
+                            data = data.replace("__NO_MORE__", "");
+                        }
+
+                        container.insertAdjacentHTML("beforeend", data);
+                        offset += limit;
+                    });
+            };
+
+            // Load 5 phòng đầu tiên khi trang load
+            loadRooms();
+
+            // Load thêm khi click nút
+            btn.addEventListener("click", loadRooms);
+        });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
-    </script>
+
 
 </body>
 
