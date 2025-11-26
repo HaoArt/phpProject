@@ -30,32 +30,37 @@ if ((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
         <![endif]-->
 
     <!-- Boostrap JS -->
-    <form class="login-form bg-light p-lg-5 p-3 border rounded" method="post">
-        <h5 class="mb-4 text-center">ADMIN LOGIN</h5>
-        <!-- Email input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-            <input type="text" name="admin_name" id="form2Example1" class="form-control" style="width: 300px;" />
-            <label class="form-label" for="form2Example1">Email address</label>
-        </div>
+    <div class="d-flex align-items-center justify-content-center min-vh-100 bg-gradient-to-r"
+        style="background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);">
+        <form class="login-form bg-dark text-white p-5 rounded-4 shadow-lg" method="post" style="width: 380px;">
+            <div class="text-center mb-4">
+                <i class="bi bi-person-circle fs-1 text-primary"></i>
+                <h3 class="mt-2 fw-bold">Admin Login</h3>
+            </div>
 
-        <!-- Password input -->
-        <div data-mdb-input-init class="form-outline mb-4">
-            <input type="password" name="admin_pass" id="form2Example2" class="form-control" />
-            <label class="form-label" for="form2Example2">Password</label>
-        </div>
+            <!-- Tên đăng nhập -->
+            <div class="form-floating mb-3">
+                <input type="text" name="admin_name" class="form-control bg-secondary text-white border-0"
+                    id="admin_name" placeholder="Email / Tên đăng nhập" required>
+                <label for="admin_name">Email / Tên đăng nhập</label>
+            </div>
 
-        <!-- 2 column grid layout for inline styling -->
+            <!-- Mật khẩu -->
+            <div class="form-floating mb-3">
+                <input type="password" name="admin_pass" class="form-control bg-secondary text-white border-0"
+                    id="admin_pass" placeholder="Mật khẩu" required>
+                <label for="admin_pass">Mật khẩu</label>
+            </div>
+
+            <!-- Nút đăng nhập -->
+            <button type="submit" name="login" class="btn btn-primary w-100 py-2 fw-bold">Đăng nhập</button>
+
+            <!-- Footer -->
+            <p class="text-center text-white-50 small mt-3 mb-0">Chỉ dành cho quản trị viên</p>
+        </form>
+    </div>
 
 
-        <!-- Submit button -->
-        <button type="submit" name="login" data-mdb-button-init data-mdb-ripple-init
-            class="btn btn-primary btn-block mb-4 w-100">Sign
-            in</button>
-
-        <!-- Register buttons -->
-
-
-    </form>
     <?php
     if (isset($_POST["login"])) {
         $frm_data = filteration($_POST);

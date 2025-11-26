@@ -3,7 +3,7 @@ ob_clean();
 require_once(__DIR__ . '/../admin/inc/db_config.php');
 
 $offset = isset($_POST['offset']) ? (int)$_POST['offset'] : 0;
-$limit = 4;
+$limit = 3;
 
 // Lấy phòng
 $rooms_res = mysqli_query($con, "SELECT * FROM rooms WHERE status=1 ORDER BY cr_no DESC LIMIT $offset, $limit");
@@ -58,7 +58,7 @@ while ($room = mysqli_fetch_assoc($rooms_res)) {
         <div class="row g-0 p-3 align-items-center">
             <div class="col-md-5 mb-lg-0 mb-md-0 mb-3">
                 <img src="./admin/<?= $img ?>" class="img-fluid rounded-start"
-                    style="width: 100%; height: 200px; object-fit: cover;">
+                    style="width: 100%; height: 200px; object-fit: cover;" loading="lazy">
             </div>
 
             <div class="col-md-5 px-lg-3 px-md-3 px-0">

@@ -18,14 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    if ($check_in_ts >= $check_out_ts) {
+    if ($check_in >= $check_out) {
         echo json_encode([
             "success" => false,
             "message" => "Ngày nhận phòng phải nhỏ hơn ngày trả phòng."
         ]);
         exit;
     }
-    // Lấy giá phòng
+    //Lấy giá phòng
     $stmt = $con->prepare("SELECT price FROM rooms WHERE cr_no=? LIMIT 1");
     $stmt->bind_param("i", $room_id);
     $stmt->execute();

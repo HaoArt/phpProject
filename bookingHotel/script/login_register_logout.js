@@ -99,3 +99,34 @@ async function logout() {
     console.error(err);
   }
 }
+
+// async function forgotPassword() {
+//   const email = prompt("Vui lòng nhập email để nhận link đặt lại mật khẩu:");
+//   if (!email) {
+//     showToast("warning", "Bạn chưa nhập email!");
+//     return;
+//   }
+
+//   const formData = new FormData();
+//   formData.append("email", email);
+//   formData.append("forgotPassword", "true");
+
+//   try {
+//     const res = await fetch("ajax/forgot-password.php", {
+//       method: "POST",
+//       body: formData,
+//     });
+
+//     const text = await res.text();
+//     console.log("Server trả:", text);
+
+//     if (text.toLowerCase().includes("gửi thành công")) {
+//       showToast("success", text);
+//     } else {
+//       showToast("danger", text);
+//     }
+//   } catch (err) {
+//     console.error("Fetch error:", err);
+//     showToast("danger", "Lỗi server!");
+//   }
+// }

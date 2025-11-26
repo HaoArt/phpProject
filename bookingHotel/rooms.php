@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-12 mb-lg-0 mb-4">
-                <nav class="navbar navbar-expand-lg bg-white bg-body-tertiary">
+                <!-- <nav class="navbar navbar-expand-lg bg-white bg-body-tertiary">
                     <div class="container-fluid flex-lg-column align-items-stretch">
                         <h5 class="mt-3">Tìm phòng phù hợp</h5>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -86,12 +86,20 @@
                             </div>
                         </div>
                     </div>
-                </nav>
+                </nav> -->
+                <div class="border bg-light p-3 rounded mb-3">
+                    <h5 class="mb-3 fw-bold">Ưu điểm nổi bật</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Phòng sạch sẽ, tiện nghi đầy đủ</li>
+                        <li class="list-group-item">View sông Hương tuyệt đẹp</li>
+                        <li class="list-group-item">Nhân viên thân thiện, phục vụ 24/7</li>
+                        <li class="list-group-item">Đặt phòng nhanh chóng, dễ dàng</li>
+                    </ul>
+                </div>
+
             </div>
             <div class="col-lg-9 col-md-12 px-4">
-
                 <div id="room-list"></div>
-
                 <div class="text-center mt-4">
                     <button id="loadMore" class="btn btn-primary">Xem thêm</button>
                 </div>
@@ -107,7 +115,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             let offset = 0;
-            const limit = 4;
+            const limit = 3;
             const btn = document.getElementById("loadMore");
             const container = document.getElementById("room-list");
 
@@ -141,7 +149,6 @@
             btn.addEventListener("click", loadRooms);
         });
     </script>
-
 
 </body>
 

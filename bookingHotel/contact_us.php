@@ -26,10 +26,13 @@
     <div class="my-5 px-4">
         <h2 class="h-font fw-bold text-center">Liên hệ với chúng tôi</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente harum, atque error
-            porro consequuntur saepe
-            nostrum optio, explicabo dolorem sunt quam sint pariatur voluptatem eligendi qui tempora eius eum tempore?
-        </p>
+        <p class="text-center mt-3">Chào mừng bạn đến với Huế Hotel! Chúng tôi luôn sẵn sàng lắng nghe ý kiến, giải đáp
+            thắc mắc
+            và hỗ trợ bạn trong quá trình đặt phòng hoặc trải nghiệm dịch vụ. Hãy điền thông tin vào form bên
+            dưới, bao gồm tên, email, số điện thoại và nội dung bạn muốn trao đổi. Đội ngũ nhân viên chuyên nghiệp
+            của chúng tôi sẽ phản hồi trong thời gian sớm nhất để đảm bảo bạn có trải nghiệm tuyệt vời tại khách sạn.
+            Đừng ngần ngại chia sẻ nhu cầu hoặc góp ý của bạn, vì chúng tôi luôn mong muốn cải thiện dịch vụ và mang
+            đến sự hài lòng tối đa cho khách hàng.</p>
     </div>
 
     <?php
