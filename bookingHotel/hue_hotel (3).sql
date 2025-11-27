@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 21, 2025 lúc 11:46 AM
+-- Thời gian đã tạo: Th10 27, 2025 lúc 04:21 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -87,7 +87,12 @@ CREATE TABLE `bookings` (
 
 INSERT INTO `bookings` (`cr_no`, `room_id`, `user_email`, `check_in`, `check_out`, `total_price`, `status`, `created_at`) VALUES
 (1, 8, 'boxart117@gmail.com', '2025-11-21', '2025-11-29', 20000000.00, 1, '2025-11-20 13:06:54'),
-(2, 8, 'boxart117@gmail.com', '2025-11-25', '2025-11-11', 2500000.00, 2, '2025-11-20 13:44:21');
+(2, 8, 'boxart117@gmail.com', '2025-11-25', '2025-11-11', 2500000.00, 2, '2025-11-20 13:44:21'),
+(3, 8, 'boxart117@gmail.com', '2025-11-22', '2025-11-29', 17500000.00, 0, '2025-11-21 11:06:20'),
+(4, 7, 'boxart117@gmail.com', '2025-11-27', '2025-11-12', 650000.00, 0, '2025-11-21 11:07:33'),
+(5, 8, 'boxart117@gmail.com', '2025-11-22', '2025-11-29', 17500000.00, 1, '2025-11-21 11:08:12'),
+(6, 8, 'boxart117@gmail.com', '2025-11-23', '2025-11-24', 2500000.00, 0, '2025-11-22 13:51:34'),
+(7, 6, 'minhquang@gmail.com', '2025-11-28', '2025-11-29', 500000.00, 0, '2025-11-27 15:09:18');
 
 -- --------------------------------------------------------
 
@@ -181,7 +186,8 @@ CREATE TABLE `manager_team` (
 
 INSERT INTO `manager_team` (`cr_no`, `name_manager`, `img_manager`, `created_at`) VALUES
 (20, 'Võ Quốc Triệu', 'uploads/managers/1763122526_IMG_17352.jpg', '2025-11-14 12:15:26'),
-(21, 'Võ Quốc Triệu', 'uploads/managers/1763122690_rac.jpg', '2025-11-14 12:18:10');
+(21, 'Võ Quốc Triệu', 'uploads/managers/1763122690_rac.jpg', '2025-11-14 12:18:10'),
+(22, 'Tran duc thanh nhuan', 'uploads/managers/1763722891_IMG_17352.jpg', '2025-11-21 11:01:31');
 
 -- --------------------------------------------------------
 
@@ -206,12 +212,12 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`cr_no`, `name`, `area`, `price`, `quantity`, `adult`, `children`, `description`, `status`) VALUES
-(1, 'Phòng Đơn', 10, 360000, 36, 3, 1, 'qưerasdfđắ', 1),
-(2, 'Phòng Đôi', 15, 630000, 63, 2, 2, 'ádasdas', 1),
-(5, 'Phòng Gia Đình', 20, 1200000, 5, 4, 3, 'Phòng truyền thống giành cho gia đình', 1),
-(6, 'Phòng Truyền Thống', 20, 500000, 6, 5, 2, 'đâsđsđưa', 0),
-(7, 'Phòng Hiện Đại', 25, 650000, 41, 3, 2, 'đứa', 1),
-(8, 'Phòng Đại Gia Đình', 40, 2500000, 4, 10, 5, 'qwreryutiosdfghjkl;zxcvbnm', 1);
+(1, 'Phòng Đơn', 10, 360000, 36, 3, 1, 'Phòng nhỏ gọn, tiện nghi cho 1 khách, phù hợp cho người đi công tác hoặc du lịch một mình.', 1),
+(2, 'Phòng Đôi', 15, 630000, 63, 2, 2, 'Phòng dành cho 2 khách với giường đôi thoải mái, thích hợp cho cặp đôi hoặc bạn bè.', 1),
+(5, 'Phòng Gia Đình', 20, 1200000, 5, 4, 3, 'Phòng rộng rãi dành cho gia đình, với đầy đủ tiện nghi cho cả người lớn và trẻ em.', 1),
+(6, 'Phòng Truyền Thống', 20, 500000, 6, 5, 2, 'Phòng mang phong cách truyền thống, thiết kế ấm cúng, thích hợp cho nhóm nhỏ hoặc gia đình.', 1),
+(7, 'Phòng Hiện Đại', 25, 650000, 41, 3, 2, 'Phòng được trang bị hiện đại, thiết kế sang trọng, phù hợp cho du khách yêu thích phong cách trẻ trung.', 1),
+(8, 'Phòng Đại Gia Đình', 40, 2500000, 4, 10, 5, 'Phòng cực rộng dành cho gia đình đông người hoặc nhóm bạn lớn, đầy đủ tiện nghi và không gian sinh hoạt chung.', 1);
 
 -- --------------------------------------------------------
 
@@ -237,25 +243,23 @@ INSERT INTO `room_facilities` (`cr_no`, `room_id`, `facilities_id`) VALUES
 (28, 5, 7),
 (29, 5, 8),
 (30, 5, 9),
-(31, 6, 4),
-(32, 6, 5),
-(33, 6, 6),
-(34, 6, 7),
-(35, 6, 8),
 (36, 7, 4),
 (37, 7, 5),
 (38, 7, 6),
 (39, 7, 7),
 (40, 7, 8),
 (41, 7, 9),
-(42, 8, 4),
-(43, 8, 5),
-(44, 8, 6),
-(45, 8, 7),
-(46, 8, 8),
-(47, 8, 9),
 (48, 2, 5),
-(49, 2, 9);
+(49, 2, 9),
+(50, 8, 4),
+(51, 8, 6),
+(52, 8, 7),
+(53, 8, 8),
+(54, 6, 4),
+(55, 6, 5),
+(56, 6, 6),
+(57, 6, 7),
+(58, 6, 8);
 
 -- --------------------------------------------------------
 
@@ -279,15 +283,15 @@ INSERT INTO `room_features` (`cr_no`, `room_id`, `features_id`) VALUES
 (14, 5, 5),
 (15, 5, 6),
 (16, 5, 7),
-(17, 6, 5),
-(18, 6, 6),
 (19, 7, 5),
 (20, 7, 6),
 (21, 7, 7),
-(22, 8, 5),
-(23, 8, 6),
-(24, 8, 7),
-(25, 2, 6);
+(25, 2, 6),
+(26, 8, 5),
+(27, 8, 6),
+(28, 8, 7),
+(29, 6, 5),
+(30, 6, 6);
 
 -- --------------------------------------------------------
 
@@ -358,7 +362,10 @@ CREATE TABLE `user_cred` (
 
 INSERT INTO `user_cred` (`cr_no`, `name`, `email`, `phone`, `address`, `birthday`, `profile`, `password`, `status`, `is_verified`) VALUES
 (6, 'Hoàng Nhật Hào', 'boxart117@gmail.com', '0866861876', 'đội 4 an xuân', '2004-12-17', 'uploads/profile/1763637874_IMG_17352.jpg', '$2y$12$rS0I2wDAFzJn4/zm0ToMyuLmAFfy/plPe74N8mVjuzXF6YtOCOjja', 1, 1),
-(7, 'Trần Đức Thành Nhuận', 'tranductn@gmail.com', '1234567891', 'đội 3 an xuân', '2004-08-09', 'uploads/profile/1763638468_IMG_17352.jpg', '$2y$12$0BI6OayxRR2hJ9GwHlF/2eby7aVxv4gQuagur584A9o6b6pcqM7la', 1, 1);
+(7, 'Trần Đức Thành Nhuận', 'tranductn@gmail.com', '1234567891', 'đội 3 an xuân', '2004-08-09', 'uploads/profile/1763638468_IMG_17352.jpg', '$2y$12$0BI6OayxRR2hJ9GwHlF/2eby7aVxv4gQuagur584A9o6b6pcqM7la', 1, 1),
+(8, 'Võ Quốc Triệu', 'voquoctrieu@gmail.com', '0123456776', 'Huế', '2004-02-20', 'uploads/profile/1764168893_rac.jpg', '$2y$12$dBXNkOuBHrcDKmwjy6gEv.PJuMYge29Qxf5FcZekAyzbekHYCMfLO', 1, 1),
+(9, 'Phạm Minh Quan', 'minhquang@gmail.com', '0123456779', 'đội 4 an xuân', '2004-11-11', 'uploads/profile/1764254449_103539a2-51ea-4401-89f1-629c9f9f6b21.jpg', '$2y$12$U7mkFndxAn9MO82MV.OPUeZM7Rpw7WVtgxzblpVBKc2wfrLz46QAq', 1, 1),
+(10, 'Tran chien', 'tranchien123@gmail.com', '0987654334', 'đội 4 an xuân', '0000-00-00', 'uploads/profile/1764254636_about.jpg', '$2y$12$JG1nPM60esa4gaQ4TgDSmOnY1Mc.ZE1CvQHoB3VCg95UPMMwhRGP2', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -382,7 +389,8 @@ CREATE TABLE `user_query` (
 --
 
 INSERT INTO `user_query` (`cr_no`, `name`, `email`, `phone`, `subject`, `message`, `date`, `seen`) VALUES
-(7, 'Võ quốc triệu', 'trieubuscu@gmail.com', '1234567897', 'book em 1 phòng 2 dao', 'càng nhiều càng tốt', '2025-11-14', 0);
+(9, 'Hoàng Nhật Hào', 'boxart117@gmail.com', '0866861876', 'Đặt phòng ', 'phòng đôi 2 người vào sáng mai nhận phòng', '2025-11-27', 0),
+(11, 'Hoàng Nhật Hào', 'boxart117@gmail.com', '0866861876', 'Đặt phòng ', 'đặt phòng đơn tối mai', '2025-11-27', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -498,7 +506,7 @@ ALTER TABLE `banner_carousel`
 -- AUTO_INCREMENT cho bảng `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `contact_detail`
@@ -522,7 +530,7 @@ ALTER TABLE `features`
 -- AUTO_INCREMENT cho bảng `manager_team`
 --
 ALTER TABLE `manager_team`
-  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `rooms`
@@ -534,13 +542,13 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT cho bảng `room_facilities`
 --
 ALTER TABLE `room_facilities`
-  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT cho bảng `room_features`
 --
 ALTER TABLE `room_features`
-  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `room_image`
@@ -558,13 +566,13 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT cho bảng `user_cred`
 --
 ALTER TABLE `user_cred`
-  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `user_query`
 --
 ALTER TABLE `user_query`
-  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `cr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
