@@ -18,37 +18,46 @@ adminLogin();
 <body class="bg-light">
     <?php require("inc/header.php") ?>
 
-    <!-- banner-->
+    <!-- Banner -->
     <div class="container-fluid z-0">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
-                <div class="card z-0">
+                <div class="card shadow-sm border-0">
+
+                    <!-- Header card -->
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Ảnh bìa quảng cáo</h5>
+                        <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#banner-s">
+                            <i class="bi bi-plus-circle"></i> Thêm ảnh bìa
+                        </button>
+                    </div>
+
+                    <!-- Body card -->
                     <div class="card-body">
-                        <div class="d-flex  align-items-center justify-content-between mb-3">
-                            <h5 class="card-title">Ảnh bìa quảng cáo</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#banner-s">
-                                <i class="bi bi-plus-circle"></i> Thêm ảnh bìa
-                            </button>
-                        </div>
-                        <div class="row " id="banner-data">
+                        <div class="row g-3" id="banner-data">
                             <div class="col-md-2">
-                                <div class="card shadow-sm">
-                                    <img src="" class="card-img-top" style="height: 200px; object-fit: cover;">
-                                    <div class="card-body text-center">
-                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                <div class="card shadow-sm border-0 h-100">
+                                    <img src="" class="card-img-top rounded-top"
+                                        style="height: 200px; object-fit: cover;">
+                                    <div class="card-body text-center d-flex flex-column justify-content-center">
+                                        <button type="button" class="btn btn-danger btn-sm mt-2" data-bs-toggle="modal"
                                             data-bs-target="#confirmDeleteBanner">
                                             <i class="bi bi-trash"></i> Xóa
                                         </button>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Thêm các banner khác vào đây -->
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
     </div>
+
 
     <!-- modal  banner-->
     <div class="modal fade" id="banner-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"

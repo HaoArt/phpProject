@@ -74,21 +74,22 @@ async function getBookingRoom() {
       return;
     }
 
-    let html = `<table class="table table-bordered table-hover">
-            <thead class="table-light">
-                <tr>
-                    <th>#</th>
-                    <th>Người đặt</th>
-                    <th>Email</th>
-                    <th>Phòng</th>
-                    <th>Ngày nhận</th>
-                    <th>Ngày trả</th>
-                    <th>Tổng giá</th>
-                    <th>Trạng thái</th>
-                    <th>Hành động</th>
-                </tr>
-            </thead>
-            <tbody>`;
+    let html = `<div class="table-responsive shadow-sm rounded-3">
+    <table class="table table-hover align-middle mb-0">
+        <thead class="table-primary text-center">
+            <tr>
+                <th>#</th>
+                <th>Người đặt</th>
+                <th>Email</th>
+                <th>Phòng</th>
+                <th>Ngày nhận</th>
+                <th>Ngày trả</th>
+                <th>Tổng giá</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>`;
 
     bookings.forEach((b, index) => {
       let statusBadge = "";
@@ -104,34 +105,35 @@ async function getBookingRoom() {
           break;
       }
 
-      html += `<tr>
-                <td>${index + 1}</td>
-                <td>${b.user_name}</td>
-                <td>${b.user_email}</td>
-                <td>${b.room_name}</td>
-                <td>${b.check_in}</td>
-                <td>${b.check_out}</td>
-                <td>${Number(b.total_price).toLocaleString()} VND</td>
-                <td id="status-${b.cr_no}">${statusBadge}</td>
-                <td>
-                    <select class="form-select form-select-sm" onchange="updateStatus(${
-                      b.cr_no
-                    }, this.value)">
-                        <option value="0" ${
-                          b.status == "0" ? "selected" : ""
-                        }>Đang chờ</option>
-                        <option value="1" ${
-                          b.status == "1" ? "selected" : ""
-                        }>Xác nhận</option>
-                        <option value="2" ${
-                          b.status == "2" ? "selected" : ""
-                        }>Đã hủy</option>
-                    </select>
-                </td>
-            </tr>`;
+      html += `<tr class="text-center">
+            <td>${index + 1}</td>
+            <td class="text-start">${b.user_name}</td>
+            <td class="text-start">${b.user_email}</td>
+            <td class="text-start">${b.room_name}</td>
+            <td>${b.check_in}</td>
+            <td>${b.check_out}</td>
+            <td>${Number(b.total_price).toLocaleString()} VND</td>
+            <td id="status-${b.cr_no}">${statusBadge}</td>
+            <td>
+                <select class="form-select form-select-sm" onchange="updateStatus(${
+                  b.cr_no
+                }, this.value)">
+                    <option value="0" ${
+                      b.status == "0" ? "selected" : ""
+                    }>Đang chờ</option>
+                    <option value="1" ${
+                      b.status == "1" ? "selected" : ""
+                    }>Xác nhận</option>
+                    <option value="2" ${
+                      b.status == "2" ? "selected" : ""
+                    }>Đã hủy</option>
+                </select>
+            </td>
+        </tr>`;
     });
 
-    html += "</tbody></table>";
+    html += `</tbody></table></div>`;
+
     document.getElementById("bookingContainer").innerHTML = html;
   } catch (err) {
     console.error(err);

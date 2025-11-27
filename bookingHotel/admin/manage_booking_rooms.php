@@ -9,7 +9,7 @@ adminLogin();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ĐĂC TRƯNG VÀ TIỆN NGHI</title>
+    <title>DANH SÁCH ĐẶT PHÒNG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php require("inc/links.php") ?>
 
@@ -21,12 +21,24 @@ adminLogin();
     <div class="container-fluid z-0">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
-                <h3 class="mb-4">Danh sách đặt phòng</h3>
 
-                <div id="bookingContainer"></div>
+                <!-- Header -->
+                <div class="card shadow-sm border-0 mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Danh sách đặt phòng</h5>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="card-body">
+                        <div id="bookingContainer">
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
         </div>
+
     </div>
     <?php require("inc/scripts.php") ?>
     <!-- <script src="scripts/settings.js"></script> -->

@@ -39,39 +39,62 @@ $status_text = [
     <meta charset="UTF-8">
     <title>Lịch sử đặt phòng</title>
     <?php require("inc/links.php") ?>
+    <style>
+        /* Giữ chiều cao tối thiểu cho container, tránh footer bị kéo lên */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .flex-grow-main {
+            flex: 1;
+        }
+
+        /* Card booking đồng đều */
+        .booking-card {
+            transition: transform 0.2s;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Dạng badge đồng bộ */
+        .badge {
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 
 <body class="bg-light">
-    <?php
-    // Tránh session_start() trùng trong header
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-    require_once('inc/header.php');
-    ?>
 
-    <div class="container py-5">
+    <?php require_once('inc/header.php'); ?>
+
+    <div class="container flex-grow-main py-5">
         <h3 class="mb-5 text-center fw-bold">Lịch sử đặt phòng của bạn</h3>
 
         <?php if (empty($bookings)): ?>
-        <p class="text-center text-muted fs-5">Bạn chưa có đặt phòng nào.</p>
+            <div class="d-flex justify-content-center align-items-center" style="min-height:200px;">
+                <p class="text-center text-muted fs-5">Bạn chưa có đặt phòng nào.</p>
+            </div>
         <?php else: ?>
-        <div class="row g-4">
-            <?php foreach ($bookings as $b): ?>
-            <div class="col-md-6 col-lg-4">
-                <div class="card shadow-sm border-0 h-100 booking-card">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title text-primary fw-bold mb-3">Phòng ID:
-                            <?= htmlspecialchars($b['room_id']) ?></h5>
-                        <p class="card-text mb-2"><strong>Ngày nhận:</strong>
-                            <?= date("d/m/Y", strtotime($b['check_in'])) ?></p>
-                        <p class="card-text mb-2"><strong>Ngày trả:</strong>
-                            <?= date("d/m/Y", strtotime($b['check_out'])) ?></p>
-                        <p class="card-text mb-2"><strong>Tổng giá:</strong>
-                            <?= number_format($b['total_price'], 0, ',', '.') ?> VND</p>
-                        <p class="card-text mt-auto">
-                            <strong>Trạng thái:</strong>
-                            <?php
+            <div class="row g-4">
+                <?php foreach ($bookings as $b): ?>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card shadow-sm border-0 h-100 booking-card">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-primary fw-bold mb-3">Phòng ID:
+                                    <?= htmlspecialchars($b['room_id']) ?></h5>
+                                <p class="card-text mb-2"><strong>Ngày nhận:</strong>
+                                    <?= date("d/m/Y", strtotime($b['check_in'])) ?></p>
+                                <p class="card-text mb-2"><strong>Ngày trả:</strong>
+                                    <?= date("d/m/Y", strtotime($b['check_out'])) ?></p>
+                                <p class="card-text mb-2"><strong>Tổng giá:</strong>
+                                    <?= number_format($b['total_price'], 0, ',', '.') ?> VND</p>
+                                <p class="card-text mt-auto">
+                                    <strong>Trạng thái:</strong>
+                                    <?php
                                     $status_class = '';
                                     switch ($b['status']) {
                                         case 0:
@@ -88,18 +111,16 @@ $status_text = [
                                             break;
                                     }
                                     ?>
-                            <span class="<?= $status_class ?>">
-                                <?= $status_text[$b['status']] ?? 'Không xác định' ?>
-                            </span>
-                        </p>
+                                    <span
+                                        class="<?= $status_class ?>"><?= $status_text[$b['status']] ?? 'Không xác định' ?></span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
-        </div>
         <?php endif; ?>
     </div>
-
 
     <?php require_once('inc/footer.php'); ?>
     <?php require("inc/scripts.php"); ?>

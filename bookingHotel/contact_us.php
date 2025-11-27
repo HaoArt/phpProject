@@ -50,7 +50,7 @@
                         <form method="post">
                             <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
                                 <div class="col-12">
-                                    <label for="name" class="form-label">Full Name <span
+                                    <label for="name" class="form-label">Họ và tên <span
                                             class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="name" name="name" value="" required>
                                 </div>
@@ -70,7 +70,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <label for="phone" class="form-label">Số điện thoại</label>
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -83,28 +83,28 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <label for="subject" class="form-label">Subject <span
+                                    <label for="subject" class="form-label">Chủ đề <span
                                             class="text-danger">*</span></label>
                                     <input type="text" class="form-control" id="subject" name="subject" value=""
                                         required>
                                 </div>
                                 <div class="col-12">
-                                    <label for="message" class="form-label">Message <span
+                                    <label for="message" class="form-label">Nội dung <span
                                             class="text-danger">*</span></label>
                                     <textarea class="form-control" id="message" name="message" rows="3"
                                         required></textarea>
                                 </div>
                                 <div class="col-12">
                                     <div class="d-grid">
-                                        <button class="btn btn-primary btn-lg" name="send" type="submit">Send
-                                            Message</button>
+                                        <button class="btn btn-primary btn-lg" name="send" type="submit">Gửi tin
+                                            nhắn</button>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
-
                 </div>
+
             </div>
             <div class="col-lg-6 col-md-6 mb-5 bg-white px-4 pt-4 order-lg-1 order-md-1 order-1">
                 <iframe class="w-100 rounded" <?php echo $contact_r['iframe']; ?> height="350" loading="lazy"

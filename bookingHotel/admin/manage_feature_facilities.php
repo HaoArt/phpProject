@@ -25,9 +25,10 @@ adminLogin();
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
                 <div class="card z-0">
                     <div class="card-body">
-                        <div class="d-flex  align-items-center justify-content-between mb-3">
+                        <div
+                            class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                             <h5 class="card-title">Đặc trưng</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#features-s">
                                 <i class="bi bi-plus-circle"></i> Thêm đặc trưng
                             </button>
@@ -57,9 +58,10 @@ adminLogin();
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
                 <div class="card z-0">
                     <div class="card-body">
-                        <div class="d-flex  align-items-center justify-content-between mb-3">
+                        <div
+                            class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                             <h5 class="card-title">Tiện nghi</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#facilities-s">
                                 <i class="bi bi-plus-circle"></i> Thêm tiện nghi
                             </button>
@@ -94,10 +96,10 @@ adminLogin();
         <div class="modal-dialog">
             <form action="">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm đặc trưng</h1>
-                        <button type="button" class="btn-close" onclick="resetFormFeature()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormFeature()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="" onsubmit="event.preventDefault()">
@@ -125,10 +127,10 @@ adminLogin();
         <div class="modal-dialog">
             <form action="">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm tiện nghi</h1>
-                        <button type="button" class="btn-close" onclick="resetFormFacilities()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormFacilities()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="" onsubmit="event.preventDefault()">
@@ -166,10 +168,10 @@ adminLogin();
         <div class="modal-dialog">
             <form action="">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm đặc trưng</h1>
-                        <button type="button" class="btn-close" onclick="resetFormFeature()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormFeature()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="" onsubmit="event.preventDefault()">
@@ -195,9 +197,9 @@ adminLogin();
     <div class="modal fade" id="confirmDeleteFeature" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header bg-danger text-white">
+                <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                     <h5 class="modal-title">Xác nhận xóa</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close btn-close-red" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body text-center">
                     Bạn có chắc muốn xóa đặc trưng này không?
@@ -216,10 +218,10 @@ adminLogin();
         <div class="modal-dialog">
             <form action="">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm đặc trưng</h1>
-                        <button type="button" class="btn-close" onclick="resetFormFacilities()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormFacilities()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="" onsubmit="event.preventDefault()">
@@ -237,7 +239,7 @@ adminLogin();
                             </div>
                             <div class="col-md-12 ps-0 mb-3">
                                 <label class="form-label">Mô tả</label>
-                                <textarea class="form-control " rows="2" aria-label="With textarea"
+                                <textarea class="form-control " rows="3" aria-label="With textarea"
                                     name="description_facilities_update" id="description_facilities_update"
                                     required></textarea>
                             </div>

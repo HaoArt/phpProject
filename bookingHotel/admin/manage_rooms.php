@@ -10,7 +10,7 @@ adminLogin();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ĐĂC TRƯNG VÀ TIỆN NGHI</title>
+    <title>PHÒNG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php require("inc/links.php") ?>
 
@@ -24,38 +24,40 @@ adminLogin();
         <!-- rooms-->
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
-                <div class="card z-0">
+                <div class="card shadow-sm border-0">
+
+                    <!-- Header card -->
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Phòng</h5>
+                        <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#rooms-s">
+                            <i class="bi bi-plus-circle"></i> Thêm Phòng
+                        </button>
+                    </div>
+
+                    <!-- Body -->
                     <div class="card-body">
-                        <div class="d-flex  align-items-center justify-content-between mb-3">
-                            <h5 class="card-title">Phòng</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#rooms-s">
-                                <i class="bi bi-plus-circle"></i> Thêm Phòng
-                            </button>
-                        </div>
-                        <div class="row ">
-                            <div class="table-responsive shadow-sm rounded-3">
-                                <table class="table table-hover align-middle">
-                                    <thead class="table-primary text-center">
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Tên</th>
-                                            <th>Diện tích</th>
-                                            <th>Số khách</th>
-                                            <th>Giá</th>
-                                            <th>Số lượng</th>
-                                            <th>Trạng thái</th>
-                                            <th>Hành động</th>
-                                        </tr>
-
-                                    </thead>
-                                    <tbody id="rooms-data">
-
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="table-responsive shadow-sm rounded-3">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-primary text-center">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Tên</th>
+                                        <th>Diện tích</th>
+                                        <th>Số khách</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Trạng thái</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rooms-data">
+                                    <!-- Dữ liệu sẽ load từ JS -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -69,10 +71,10 @@ adminLogin();
             <form action="" onsubmit="event.preventDefault()">
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm Phòng</h1>
-                        <button type="button" class="btn-close" onclick="resetFormRoom()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormRoom()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <div class="modal-body">
@@ -209,9 +211,9 @@ adminLogin();
             <form id="editRoomForm" onsubmit="event.preventDefault()">
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h5 class="modal-title" id="editRoomModalLabel">Chỉnh sửa phòng</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        <button type="button" class="btn-close btn-close-red" data-bs-dismiss="modal"
                             onclick="resetFormRoom()"></button>
                     </div>
 
@@ -297,9 +299,9 @@ adminLogin();
         <div class="modal-dialog modal-lg">
             <form id="addImagesForm" onsubmit="event.preventDefault()" enctype="multipart/form-data">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h5 class="modal-title" id="addImagesModalLabel">Thêm ảnh phòng</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        <button type="button" class="btn-close btn-close-red" data-bs-dismiss="modal"
                             onclick="resetAddImagesForm()"></button>
                     </div>
                     <div class="modal-body">

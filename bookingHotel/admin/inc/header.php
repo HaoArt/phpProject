@@ -17,7 +17,7 @@
                     <ul class="list-unstyled m-0">
                         <li><a href="dashboard.php"
                                 class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'dashboard.php') ? 'c-active' : ''; ?>"><i
-                                    class="bi bi-speedometer2"></i> Dashboard</a></li>
+                                    class="bi bi-speedometer2"></i> Tổng quan</a></li>
                         <li><a href="manage_booking_rooms.php"
                                 class="d-block py-2 px-3 text-light text-decoration-none <?php echo ($current_page == 'manage_booking_rooms.php') ? 'c-active' : ''; ?>"><i
                                     class="bi bi-door-closed"></i>Lịch sử đặt Phòng</a></li>

@@ -92,12 +92,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     if ($stmt->execute()) {
         $_SESSION['userLogin'] = true;
         $_SESSION['user'] = [
-            'name'     => $user['name'],
-            'email'    => $user['email'],
-            'phone'    => $user['phone'],
-            'address'  => $user['address'],
-            'birthday' => $user['birthday'],
-            'profile'  => $user['profile']
+            'name'     => $name,
+            'email'    => $email,
+            'phone'    => $phone,
+            'address'  => $address,
+            'birthday' => $birthday,
+            'profile'  => $img_path
         ];
 
         echo "Đăng ký thành công!";

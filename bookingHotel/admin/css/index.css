@@ -110,3 +110,22 @@ body {
     color: #fff !important;
     border-radius: 5px;
 }
+
+#manager-data .card {
+    min-height: 320px;
+    /* Bạn có thể đổi theo ý thích */
+}
+
+.modal-custom-xl {
+    max-width: 90% !important;
+    /* to rộng 90% màn hình */
+}
+
+.modal.fade .modal-dialog {
+    margin: auto !important;
+    /* căn giữa tuyệt đối */
+}
+
+.btn-close-red {
+    filter: invert(24%) sepia(92%) saturate(6381%) hue-rotate(356deg) brightness(93%) contrast(96%);
+}

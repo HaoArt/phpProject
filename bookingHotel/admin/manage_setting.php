@@ -21,19 +21,20 @@ adminLogin();
     <div class="container-fluid z-0">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
-                <div class="card z-0">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Cài đặt tổng quan</h5>
+                        <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#general-s">
+                            <i class="bi bi-pencil-square"></i> Chỉnh sửa
+                        </button>
+                    </div>
+
                     <div class="card-body">
-                        <div class="d-flex  align-items-center justify-content-between mb-3">
-                            <h5 class="card-title">Cài đặt tổng quang</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#general-s">
-                                <i class="bi bi-pencil-square"></i> Chỉnh sửa
-                            </button>
-                        </div>
-                        <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">Tiêu đề trang</h6>
-                        <p class="card-text" id="site_title">content</p>
-                        <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">Về chúng tôi</h6>
-                        <p class="card-text" id="site_about">content</p>
+                        <h6 class="text-secondary fw-bold mt-2">Tiêu đề trang</h6>
+                        <p id="site_title" class="mb-3">content</p>
+
+                        <h6 class="text-secondary fw-bold">Về chúng tôi</h6>
+                        <p id="site_about" class="mb-1">content</p>
                     </div>
                 </div>
             </div>
@@ -43,57 +44,63 @@ adminLogin();
     <div class="container-fluid z-0">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
-                <div class="card z-0">
+                <div class="card shadow-sm border-0">
+
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Cài đặt liên hệ</h5>
+                        <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#contact-s">
+                            <i class="bi bi-pencil-square"></i> Chỉnh sửa
+                        </button>
+                    </div>
+
                     <div class="card-body">
-                        <div class="d-flex  align-items-center justify-content-between mb-3">
-                            <h5 class="card-title">Cài đặt liên hệ</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#contact-s">
-                                <i class="bi bi-pencil-square"></i> Chỉnh sửa
-                            </button>
-                        </div>
-                        <div class="row">
+                        <div class="row g-4">
+                            <!-- LEFT -->
                             <div class="col-lg-6">
-                                <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">Địa chỉ</h6>
-                                <p class="card-text" id="address">content</p>
-                                <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">Điện thoại</h6>
-                                <div class="card-text d-flex overflow-x-hidden">
-                                    <i class="bi bi-telephone-fill"></i>
-                                    <p class="ms-2" id="phone1">content</p>
+                                <h6 class="fw-bold text-secondary">Địa chỉ</h6>
+                                <p id="address">content</p>
+
+                                <h6 class="fw-bold text-secondary">Điện thoại</h6>
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="bi bi-telephone-fill text-primary"></i>
+                                    <p class="ms-2 mb-0" id="phone1">content</p>
+                                </div>
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="bi bi-telephone-fill text-primary"></i>
+                                    <p class="ms-2 mb-0" id="phone2">content</p>
                                 </div>
 
-                                <div class="card-text d-flex overflow-x-hidden">
-                                    <i class="bi bi-telephone-fill"></i>
-                                    <p class="ms-2" id="phone2">content</p>
+                                <h6 class="fw-bold text-secondary mt-3">Google Map</h6>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-geo-alt-fill text-danger"></i>
+                                    <p class="ms-2 mb-0" id="ggmap">content</p>
                                 </div>
-                                <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">GG map</h6>
-                                <div class="card-text d-flex overflow-x-hidden">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                    <p class="ms-2" id="ggmap"> content</p>
-                                </div>
-                                <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">Email</h6>
-                                <div class="card-text d-flex overflow-x-hidden">
-                                    <i class="bi bi-envelope-at-fill me-2"></i>
-                                    <p class="ms-2" id="email">content</p>
+
+                                <h6 class="fw-bold text-secondary mt-3">Email</h6>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-envelope-at-fill text-warning"></i>
+                                    <p class="ms-2 mb-0" id="email">content</p>
                                 </div>
                             </div>
+
+                            <!-- RIGHT -->
                             <div class="col-lg-6">
-                                <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">Mạng xã hội</h6>
-                                <div class="card-text d-flex overflow-x-hidden">
-                                    <i class="bi bi-facebook  me-2"></i>
-                                    <p class="ms-2" id="fb">Hoàng Nhật hào</p>
+                                <h6 class="fw-bold text-secondary">Mạng xã hội</h6>
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="bi bi-facebook text-primary"></i>
+                                    <p class="ms-2 mb-0" id="fb">Hoàng Nhật Hào</p>
                                 </div>
-                                <div class="card-text d-flex overflow-x-hidden">
-                                    <i class="bi bi-github  me-2"></i>
-                                    <p class="ms-2" id="github">HaoArt</p>
+                                <div class="d-flex align-items-center mb-1">
+                                    <i class="bi bi-github"></i>
+                                    <p class="ms-2 mb-0" id="github">HaoArt</p>
                                 </div>
 
-                                <h6 class="card-subtitle mb-2 text-body-secondary fw-bold">iframe</h6>
-                                <iframe class="w-100 rounded border" height="200" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade" id="iframe" src=""></iframe>
+                                <h6 class="fw-bold text-secondary mt-3">Bản đồ nhúng (iframe)</h6>
+                                <iframe id="iframe" class="w-100 rounded border" height="220" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -102,44 +109,50 @@ adminLogin();
     <div class="container-fluid z-0">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden" id="mt-custom">
-                <div class="card z-0">
+                <div class="card shadow-sm border-0">
+
+                    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Thành viên phát triển</h5>
+                        <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#manager-s">
+                            <i class="bi bi-plus-circle"></i> Thêm thành viên
+                        </button>
+                    </div>
+
                     <div class="card-body">
-                        <div class="d-flex  align-items-center justify-content-between mb-3">
-                            <h5 class="card-title">Thành viên phát triển</h5>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#manager-s">
-                                <i class="bi bi-plus-circle"></i> Thêm thành viên
-                            </button>
-                        </div>
-                        <div class="row " id="manager-data">
-                            <div class="col-md-2">
-                                <div class="card shadow-sm">
-                                    <img src="" class="card-img-top" style="height: 200px; object-fit: cover;">
-                                    <div class="card-body text-center">
-                                        <p class="card-text fw-bold mb-2">Hoang Nhat Hao</p>
-                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                        <div class="row g-4 align-items-stretch" id="manager-data">
+
+                            <div class="col-md-3">
+                                <div class="card border-0 shadow-sm h-100">
+                                    <img src="" class="card-img-top rounded-top"
+                                        style="height: 200px; object-fit: cover;">
+                                    <div class="card-body text-center d-flex flex-column justify-content-between">
+                                        <p class="fw-bold mb-2">Hoang Nhat Hao</p>
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                             data-bs-target="#confirmDeleteModal">
                                             <i class="bi bi-trash"></i> Xóa
                                         </button>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
     <!-- modal  general-->
     <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <form action="">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Cài đặt tổng quát</h1>
-                        <button type="button" class="btn-close" onclick="resetFormGeneral()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormGeneral()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="col-md-6 ps-0 mb-3">
@@ -168,10 +181,10 @@ adminLogin();
         <div class="modal-dialog  modal-xl">
             <form action="">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Cài đặt liên hệ</h1>
-                        <button type="button" class="btn-close" onclick="resetFormContact()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormContact()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="col-md-12 ps-0 mb-3">
@@ -258,10 +271,10 @@ adminLogin();
         <div class="modal-dialog">
             <form action="">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header bg-primary text-white">
                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm thành viên</h1>
-                        <button type="button" class="btn-close" onclick="resetFormManager()" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                        <button type="button" class="btn-close btn-close-red" onclick="resetFormManager()"
+                            data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form action="" onsubmit="event.preventDefault()">
